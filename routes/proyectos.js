@@ -13,6 +13,15 @@ router.post(
   proyectoController.crearProyecto,
 );
 
-router.get('/', auth, proyectoController.crearProyecto);
+// Obtener todos los proyectos
+router.get('/', auth, proyectoController.obtenerProyectos);
+
+// Actualizar un proyecto vía id
+router.put(
+  '/:id',
+  auth,
+  [check('nombre', 'El nombre del proyecto es obligatorio').not().isEmpty()],
+  proyectoController.actulizarProyecto,
+);
 
 module.exports = router;

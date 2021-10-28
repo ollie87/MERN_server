@@ -5,10 +5,10 @@ const cors = require('cors');
 // crear el servidor
 const app = express();
 
-// conectar a la base de datos
+// Conectar a la base de datos
 conectarDB();
 
-// Habilitar CORS
+// habilitar cors
 app.use(cors());
 
 // Habilitar express.json
@@ -23,7 +23,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/proyectos', require('./routes/proyectos'));
 app.use('/api/tareas', require('./routes/tareas'));
 
-//arrancar la app
+// arrancar la app
 app.listen(port, '0.0.0.0', () => {
   console.log(`El servidor esta funcionando en el puerto ${port}`);
 });
